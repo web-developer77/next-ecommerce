@@ -1,0 +1,214 @@
+.product_search {
+  margin: 0;
+  padding: 20px 0;
+  background: #f5f5f5;
+  .product_search_area {
+    // padding: 0 0 0 140px;
+  }
+}
+
+.product_page {
+  margin: 0;
+  padding: 60px 0;
+  background: #fff;
+  .product_col {
+    height: 430px;
+    margin: 0 0 50px;
+    padding: 0 0 10px;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 13px 0px rgb(0 0 0 / 13%);
+    -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.13);
+    box-shadow: 0px 0px 13px 0px rgb(0 0 0 / 13%);
+    position: relative;
+    padding: 15px 20px 30px;
+    .product_image {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      img {
+        height: 150px;
+        display: block;
+        margin: 0 auto;
+        width: 100% !important;
+        max-width: 100%;
+      }
+    }
+    h2 {
+      min-height: 40px !important;
+      overflow: hidden;
+      height: 40px;
+      margin: 0 auto 0;
+      padding: 0 0 10px 0;
+      color: #282828;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 600;
+      border: none;
+      a {
+        color: #cd2323;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+    p {
+      height: 90px !important;
+      overflow: hidden;
+      min-height: 65px;
+      margin: 0 auto 0;
+      padding: 0 0 10px 0;
+      color: #5b5b5b;
+      font-size: 13px;
+      line-height: 18px;
+      font-weight: 400;
+      border: none;
+    }
+    .price {
+      color: #414141;
+      font-size: 26px;
+      line-height: 18px;
+      font-weight: 700;
+      border: none;
+      margin: 0 auto 0;
+      padding: 15px 0;
+      display: block;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .btt_area {
+      margin: 20px 0 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.search_box {
+  padding: 0 0 0;
+  margin: 0 0 25px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 13px 0px rgb(0 0 0 / 13%);
+  -moz-box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.13);
+  box-shadow: 0px 0px 13px 0px rgb(0 0 0 / 13%);
+  position: relative;
+  .date {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 99;
+    .day {
+      color: #fff;
+      background: #e0192d;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 24px;
+      padding: 6px 8px;
+      display: block;
+      background: rgb(224, 25, 45, 1);
+    }
+    .month {
+      color: #fff;
+      background: rgb(197, 0, 18, 1);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 24px;
+      padding: 10px 8px;
+      display: block;
+    }
+  }
+  .search_img {
+    padding: 0 0 0 0;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    a {
+      padding: 0;
+      margin: 0;
+      outline: none;
+      transition: all 0.6s;
+      text-decoration: none;
+      img {
+        max-width: 100%;
+        -moz-transition: all 1.5s;
+        -webkit-transition: all 1.5s;
+        transition: all 1.5s;
+        max-height: 235px;
+        height: 230px;
+        width: 100%;
+      }
+    }
+  }
+  .meta {
+    margin: 5px 10px 0;
+    ul {
+      min-height: 68px !important;
+      overflow: hidden;
+      line-height: 22px;
+      margin: 1px 0 0;
+      li {
+        display: inline-block;
+        font-weight: 200;
+        margin: 0 5px 0 0;
+        padding: 0 10px 0 0;
+        background: url(/assets/img/blog-divider.png) 100% 55% no-repeat;
+        font-style: italic;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  }
+  h1 {
+    padding: 2px 10px 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: $primary;
+  }
+  .content {
+    min-height: 100px;
+    overflow: hidden;
+  }
+  p {
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0 10px 10px;
+    text-align: justify;
+  }
+  .read_more {
+    margin: 10px 0 20px;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 767px) {
+  .product_search {
+    .product_search_area {
+      padding: 0 20px;
+    }
+  }
+  .product_page {
+    .product_col {
+      p {
+        min-height: auto;
+      }
+    }
+  }
+  
+  .search_box {
+    .search_img {
+      max-height: inherit;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .product_page {
+    .product_col {
+      margin: 0 0 30px;
+    }
+  }
+}

@@ -1,0 +1,122 @@
+.header-right {
+  .menu {
+    li.dropdown {
+      .dropdown-menu {
+        display: none;
+        z-index: 99999999;
+      }
+      &:hover {
+        overflow: visible;
+        .dropdown-menu {
+          display: block;
+          min-width: 240px;
+          text-align: center;
+          li {
+            text-align: center;
+            width: 100%;
+            a {
+              padding: 14px 0px;
+              color: #232323;
+              font-size: 13px;
+              line-height: 15px;
+              transition: .3s all ease;
+              &:hover {
+                font-size: 102%;
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-select-box {
+  div[class*="placeholder"]{
+    font-size: 14px;
+  }
+  div[class*="indicatorContainer"]{
+    width: 15px;
+    height: 15px;
+    padding: 0;
+  }
+  div[class*="ValueContainer"]{
+    padding: 0;
+  }
+  div[class*="-control"]{
+    min-height: 20px;
+  }
+  span[class*="indicatorSeparator"]{
+    width: 0;
+  }
+  div[class*="Input"]{
+    input {
+      height: 25px;
+      font-size: 12px;
+    }
+    padding: 0;
+  }
+  div[class*="Input"]:after{
+    height: 0;
+  }
+  div[class*="singleValue"]{
+    font-size: 14px;
+  }
+
+  div[class*="menu"]{
+    * {
+      font-size: 14px !important;  
+      color: #000;
+    }
+    font-size: 14px;
+    color: #000;
+  }
+  
+}
+
+.header-select-custom {
+  .custom-cat-select {
+    font-size: 14px;
+    border-color: #ddd;
+    color: #000;
+    .select-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}
+
+
+@media (max-width: 1199px) {
+  .parent_option {
+    width: 100px !important;
+    // padding-left: 10px !important;
+  }
+  .search-content input[type='text'] {
+    padding: 0 120px 0 55px !important;
+  }
+  .search-content button[type='submit'] {
+    left: 0 !important;
+  }
+  .search_option {
+    left: 36px !important;
+  }
+  .search-form-wrapper {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .custom-select_col {
+    width: 100%;
+    flex-wrap: wrap !important;
+    margin-top: 15px;
+  }
+  .search-form-wrapper .search_option ul {
+    max-width: calc(100vw - 50px);
+    top: 28px;
+  }
+}

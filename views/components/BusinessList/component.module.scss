@@ -1,0 +1,28 @@
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px 0;
+
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+
+.header {
+  margin: 0;
+  padding: 8px 0;
+  // background-color: #232D37;
+  // color: white;
+  width: 100%;
+}
+
+.content {
+  margin: 0;
+  padding: 20px;
+  // background: #F7F7F7;
+  // border: 1px solid #C2C2C2;
+  width: 100%;
+}

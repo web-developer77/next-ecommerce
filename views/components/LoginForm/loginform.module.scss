@@ -1,0 +1,27 @@
+.loginform {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px 0;
+  max-width: 800px !important;
+
+  @media (max-width: 767px) {
+    padding: 0;
+  }
+}
+
+.formheader {
+  margin: 0;
+  padding: 8px 0;
+  background-color: #232D37;
+  color: white;
+}
+
+.formcontent {
+  margin: 0;
+  padding: 20px;
+  background: #F7F7F7;
+  border: 1px solid #C2C2C2;
+}

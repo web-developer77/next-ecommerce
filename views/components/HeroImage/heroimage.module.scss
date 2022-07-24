@@ -1,0 +1,28 @@
+.banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  min-height: 208px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+    color: #fff;
+    line-height: 200px;
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+@media (max-width: 599px) {
+  .banner {
+    min-height: 220px;
+    h1 {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+}

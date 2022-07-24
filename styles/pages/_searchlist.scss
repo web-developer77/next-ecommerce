@@ -1,0 +1,134 @@
+.searching_list {
+  width: 100%;
+  display: inline-block;
+  margin-top: 25px;
+}
+.searching_list_col {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.searching_list_col_image {
+  width: 30%;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.searching_list_col_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: all ease-in-out 0.3s;
+  // background-color: lightgray;
+  border: 1px solid lightgrey;
+}
+.searching_list_col:hover img {
+  transform: scale(1.5) rotate(10deg);
+  border: 1px solid lightgrey;
+}
+.searching_list_date {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  background-color: #dc3f3f;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  padding: 0 12px;
+}
+.searching_list_col_content {
+  width: 70%;
+  float: right;
+  padding: 30px;
+  position: relative;
+  .search_col_detail p {
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.searching_list_col_content h2 {
+  width: 100%;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #d72222;
+  margin-bottom: 6px;
+}
+.searching_list_col_content h3 {
+  width: 100%;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #131313;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  background: url(/assets/img/serach_location_icon.png) top left no-repeat;
+}
+.searching_list_col_content p {
+  width: 100%;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #545454;
+  margin-bottom: 25px;
+  line-height: 26px;
+}
+.searching_list ul {
+  width: 100%;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+.searching_list ul li {
+  float: left;
+  margin-right: 25px;
+}
+.searching_list ul li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 767px) {
+  .searching_list_col_image {
+    height: 150px;
+  }
+  .searching_list_date {
+    line-height: 30px;
+    font-size: 14px;
+    padding: 0 6px;
+  }
+  .searching_list_col_content ul li a {
+    padding: 0 20px;
+    font-size: 14px;
+  }
+  .searching_list_col_content h2 {
+    font-size: 18px;
+  }
+  .searching_list_col_content {
+    padding: 0 15px 15px;
+  }
+}
+
+@media (max-width: 599px) {
+  .searching_list_col_image {
+    width: 100%;
+    position: relative;
+  }
+  .searching_list_col_content {
+    padding: 0;
+    margin-top: 15px;
+    width: 100%;
+  }
+  .searching_list_col_content p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .searching_list_date {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,248 @@
+schema {
+  query: MstCountryQuery
+ 
+}
+
+# The `Date` scalar type represents a year, month and day in accordance with the [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
+scalar Date
+
+# The `DateTime` scalar type represents a date and time. `DateTime` expects timestamps to be formatted in accordance with the [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
+scalar DateTime
+
+# The `DateTimeOffset` scalar type represents a date, time and offset from UTC. `DateTimeOffset` expects timestamps to be formatted in accordance with the [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.
+scalar DateTimeOffset
+
+# The `Seconds` scalar type represents a period of time represented as the total number of seconds.
+scalar Seconds
+
+# The `Milliseconds` scalar type represents a period of time represented as the total number of milliseconds.
+scalar Milliseconds
+
+scalar Decimal
+
+scalar Uri
+
+scalar Guid
+
+scalar Short
+
+scalar UShort
+
+scalar UInt
+
+scalar ULong
+
+scalar Byte
+
+scalar SByte
+
+type MstCountryQuery {
+  getPrdProductList(
+    productName: String = null
+    productId: Int = null
+    fromPrice: Int = null
+    toPrice: Int = null
+    categoryId: Int = null
+    status: Boolean = null
+    typeId: Int = null
+    scopeId: Int = null
+    userId: Int = null
+    page: Int = null
+    size: Int = null
+    companyId: Int = null
+  ):ResponseProductDt
+}
+type getMstSpecialList(
+specialId: Int = null
+specialName: String= null
+franchiseId: Int = null
+statusIds: String= null
+distance: Decimal= null
+companyIds: String= null
+categoryIds: String= null
+provinceIds: String= null
+cityIds: String= null
+suburbIds: String= null
+page: Int= null
+size: Int= null
+): ResponseMstSpecialsDto
+
+type getMagazinesList(
+    franchiseId: Int= null
+    eflyerId: String= null
+    magazineName: String= null
+    statusIds: String= null
+    companyIds: String= null
+    categoryIds: String= null
+    provinceIds: String= null
+    cityIds: String= null
+    suburbIds: String= null
+    page: Int= null
+    size: Int= null
+  ): ResponseMstEFlyersDto
+
+type ResponseProductDt {
+  # Count
+  count: Int!
+
+  # CurrentPage
+  currentPage: Int!
+
+  # Message
+  message: String!
+
+  # NextPage
+  nextPage: Int!
+
+  # PrevPage
+  prevPage: Int!
+
+  # Result
+  result: [ProductDtType]
+
+  # Success
+  success: Boolean!
+
+  # TotalPages
+  totalPages: Int!
+}
+
+  type ProductDtType {
+  activeText: String
+  categoryID: Int
+  categoryName: String
+  description: String
+  documentName: String
+  documentPath: String
+  isActive: Boolean
+  mapProductImages: [MapProductImagesType]
+  prdBid: [PrdBidType]
+  prdHire: [PrdHireType]
+  productID: Int
+  productImage: String
+  productName: String
+  productNumber: String
+  scopeID: Int
+  typeID: Int
+  unitCost: Decimal
+}
+
+type PrdProductsType {
+  auction: Boolean
+  category: PrdCategoryType
+  categoryId: Int
+  createdDate: DateTime
+  documentName: String
+  documentPath: String
+  domain: MstDomainType
+  domainId: Int
+  featured: Boolean
+  isActive: Boolean
+  mapProductDocument: [MapProductDocumentType]
+  mapProductImages: [MapProductImagesType]
+  modifiedDate: DateTime
+  prdBid: [PrdBidType]
+  prdShoppingCart: [PrdShoppingCartType]
+  productId: Int!
+  productImage: String
+  productName: String
+  productNumber: String
+  subCategoryId: Int
+  unitCost: Decimal
+}
+
+
+type MapProductImagesType {
+  active: Boolean
+  createdBy: Int
+  createdDate: DateTime
+  imageId: Int!
+  imageName: String
+  imagePath: String
+  product: PrdProductsType
+  productId: Int
+}
+
+type PrdBidType {
+  bidAmount: Decimal
+  bidApprovedMail: Boolean
+  bidId: Int!
+  createdDate: DateTime
+  isAccepted: Boolean
+  isActive: Boolean
+  modifiedBy: Int
+  modifiedDate: DateTime
+  mstCountry: PrdProductsType
+  productId: Int
+  userId: Int
+}
+
+type PrdHireType {
+  businessConfirmedReturned: Boolean
+  businessConfirmedReturnedDate: DateTime
+  clientConfirmedReturned: Boolean
+  clientConfirmedReturnedDate: DateTime
+  fromDate: DateTime
+  hireId: Int!
+  isAccepted: Boolean
+  mstCountry: PrdProductsType
+  productId: Int
+  returned: Boolean
+  returnedDate: DateTime
+  toDate: DateTime
+  userId: Int
+}
+type
+type PrdCategoryType {
+  category: PrdCategoryType
+  categoryId: Int!
+  categoryName: String
+  createdBy: Int
+  createdDate: DateTime
+  domain: MstDomainType
+  isActive: Boolean
+  modifiedBy: Int
+  modifiedDate: DateTime
+  prdProducts: [PrdProductsType]
+  prdSubCategory: [PrdSubCategoryType]
+}
+
+type MstDomainType {
+  active: Boolean
+  domainId: Int!
+  domainName: String
+  prdCategory: [PrdCategoryType]
+  prdProducts: [PrdProductsType]
+}
+
+type PrdSubCategoryType {
+  active: Boolean
+  category: PrdCategoryType
+  categoryId: Int
+  createdBy: Int
+  createdDate: DateTime
+  domainId: Int
+  modifiedBy: Int
+  modifiedDate: DateTime
+  subCategoryId: Int!
+  subCategoryName: String
+}
+
+type MapProductDocumentType {
+  active: Boolean
+  createdBy: Int
+  createdDate: DateTime
+  documentId: Int!
+  documentName: String
+  documentPath: String
+  productId: Int
+}
+
+type PrdShoppingCartType {
+  dateCreated: DateTime
+  productId: Int
+  quantity: Int
+  recordId: Int!
+  sessionId: String
+  userId: Int
+}

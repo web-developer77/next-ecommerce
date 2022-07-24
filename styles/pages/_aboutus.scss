@@ -1,0 +1,185 @@
+.about_us {
+  margin: 10px 0 0;
+  padding: 40px 0;
+  background: #f5f5f5;
+  .about_part {
+    margin: 0;
+    padding: 30px 0;
+    .about_image {
+      margin: 10px 0;
+      padding: 0;
+      img {
+        max-width: 100%;
+      }
+    }
+    h2 {
+      color: #333333;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 700;
+      padding-bottom: 10px;
+    }
+    p {
+      color: #6a6a6a;
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 400;
+      margin: 0;
+      padding: 15px 0 0;
+    }
+  }
+}
+.about_content {
+  margin: 20px 0 0;
+  padding: 0;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  h2 {
+    margin: 25px 0 15px;
+    padding: 0 0 10px;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 4px;
+      background: #cd2323;
+    }
+  }
+  p {
+    color: #6a6a6a;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    margin: 0;
+    padding: 6px 0 10px;
+  }
+  h3 {
+    color: #666;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    margin: 0;
+    padding: 15px 0 10px;
+  }
+  ul {
+    margin: 0;
+    padding: 0 0 0 10px;
+  }
+  li {
+    color: #666;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0;
+    padding: 6px 0 6px 22px;
+    // background: url(/assets/img/ch2.png) 0 10px no-repeat;
+  }
+}
+
+.manufact-how-to-work {
+  margin: 3% 7%;
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  h1 {
+    color: #333333;
+    font-size: 30px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding-bottom: 30px;
+  }
+  h2 {
+    color: #646464;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 300;
+    padding-bottom: 50px;
+  }
+  h4 {
+    color: #333333;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 300;
+  }
+  h3 {
+    color: #333333;
+    font-size: 24px;
+    text-align: unset !important;
+    line-height: 28px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+  p {
+    color: #8b8b8b;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .manufact-howtowork-right {
+    padding-left: 40px;
+    .manufact-htw-step {
+      margin-bottom: 35px;
+      .manufact-howtowork-content {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.howtowork-heading::after {
+  background: none;
+}
+
+@media (max-width: 1025px) {
+  .manufact-how-to-work {
+    .manufact-howtowork-right {
+      padding-top: 30px;
+    }
+    h3 {
+      font-size: 16px;
+    }
+  }
+}
+@media (max-width: 767px) {
+}
+
+@media (max-width: 599px) {
+  .manufact-how-to-work {
+    margin: 3% 0;
+    h1 {
+      font-size: 16px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300;
+      padding-bottom: 20px;
+    }
+    .manufact-howtowork-right {
+      padding-left: 15px;
+      .manufact-htw-step {
+        text-align: center;
+        .manufact-howtowork-content {
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+}
