@@ -82,7 +82,7 @@ const AttorneyLists = (props: any) => {
     suburb,
     subCategoryId,
   })
-  const [searchParamAsync, setsearchParamAsync] = useState<any>({});
+  const [searchParamAsync, setsearchParamAsync] = useState<any>({ subCategoryId: {value: 0, label: "All Category"}});
   const [activeCompayId, setActiveCompanyId] = useState<any>(null)
   const [questionModalShow, setQuestionModalShow] = useState<boolean>(false)
   const { setBusinessList } = actionDispatch(useAppDispatch())
@@ -219,10 +219,10 @@ const AttorneyLists = (props: any) => {
   const handleChangeSubCategory = (e: any) => {
     if (e?.value) {
       setSearchParam({ ...searchParam, subCategoryId: Number(e.value) });
-      setsearchParamAsync({ ...searchParamAsync, subCategoryId: e });
+      setsearchParamAsync({ subCategoryId: e });
     } else {
       setSearchParam({ ...searchParam, subCategoryId: null });
-      setsearchParamAsync({ ...searchParamAsync, subCategoryId: null });
+      setsearchParamAsync({ subCategoryId: null });
     }
   };
 
@@ -236,6 +236,7 @@ const AttorneyLists = (props: any) => {
       if (res.nextPage === page) {
         hasMore = false
       }
+      options.push({value: 1447, label: "All Category"})
       res.result.map((el: any, index: any) => {
         options.push({ value: el?.categoryId, label: el?.categoryName });
       })
@@ -370,7 +371,7 @@ const AttorneyLists = (props: any) => {
             value={searchParamAsync?.subCategoryId}
             onChange={handleChangeSubCategory}
             loadOptions={loadSubCategory}
-            placeholder="All Category"
+            // placeholder="All Category"
             additional={{
               page: 1,
             }}

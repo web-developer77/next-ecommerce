@@ -388,8 +388,13 @@ export const POST_PRD_SHOPPING_CART = gql`
           productNumber
           quantity
           recordID
+          fromDate
+          endDate
           totalPrice
           unitCost
+          prdProduct {
+            salesTypeId
+          }
         }
         totalAmount
         amountExlVat

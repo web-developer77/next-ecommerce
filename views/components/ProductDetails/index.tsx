@@ -180,7 +180,7 @@ const LegalContractSection = () => {
   ])
   const [priceRange, setPriceRange] = useState<Array<string>>([])
   const [categoryId, setCategoryId] = useState<number | null>(_categoryId)
-  const [categoryAsyncId, setCategoryAsyncId] = useState<any>(null)
+  const [categoryAsyncId, setCategoryAsyncId] = useState<any>({value: 1447, label: "All Category"})
   const [categoryId12, setCategoryId1] = useState<number | null>(_categoryId)
 
   const [scopeId, setScopeId] = useState<number | null>(_scopeId)
@@ -292,6 +292,7 @@ const LegalContractSection = () => {
       if (res.nextPage === page) {
         hasMore = false
       }
+      options.push({value: 1447, label: "All Category"})
       res.result.map((el: any, index: any) => {
         options.push({ value: el?.categoryId, label: el?.categoryName });
       })
@@ -662,11 +663,12 @@ const LegalContractSection = () => {
   }
 
   const handleChangeCategory = (catId: any) => {
+    console.log(catId)
     setCategoryId1(null)
     setCategoryData(
       subCategoryList?.find((f) => f.categoryId == catId),
     )
-    if (catId === 'all') {
+    if (catId === 1447) {
       setCategoryId(null)
       fetchProductList(
         page,
@@ -681,11 +683,10 @@ const LegalContractSection = () => {
         searchText || null,
       )
     } else {
-      // setCategoryId(null)
       setCategoryId(Number(catId))
       fetchProductList(
         page,
-        null,
+        Number(catId),
         fromPrice,
         toPrice,
         scopeId,
@@ -698,7 +699,7 @@ const LegalContractSection = () => {
     }
   }
   const handleChangeCategory1 = (e: any) => {
-    console.log("product detiaal *******************",e)
+    console.log("product detail *******************",e)
     setCategoryData(legalList1?.find((f) => f.categoryId == e.target.value))
     if (e.target.value === 'all') {
       setCategoryId(null)
@@ -1016,7 +1017,6 @@ const LegalContractSection = () => {
                               value={categoryAsyncId}
                               onChange={(e: any) => { handleChangeCategory(e.value); setCategoryAsyncId(e) }}
                               loadOptions={loadSubCategory}
-                              placeholder="All Category"
                               additional={{
                                 page: 1,
                               }}

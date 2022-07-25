@@ -12,6 +12,10 @@ const Home = (props: any) => {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
         />
+        <meta
+          name="description"
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
+        />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="author" content="" />
