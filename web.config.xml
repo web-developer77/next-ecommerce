@@ -1,100 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  <system.webServer>
-    <rewrite>
-      <rules>
-        <rule name="Static Assets" stopProcessing="true">
-          <match url="([\S]+[.](html|htm|svg|js|css|png|gif|jpg|jpeg))" />
-          <action type="Rewrite" url="/{R:1}"/>
-        </rule>
-         <rule name="ReactRouter Routes" stopProcessing="true">
-          <match url=".lawyers/*" />
-          <conditions logicalGrouping="MatchAll">
-            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
-          </conditions>
-         <action type="Rewrite" url="/index.html" />
-        </rule>			
-		<rule name="ReactRouter Routes product" stopProcessing="true">
-			<match url=".product/*" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/product/[pid].html" />
-		</rule>	
-		<rule name="ReactRouter Routes product html" stopProcessing="true">
-			<match url=".product/*.html" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/product/{R:0}.html" />
-		</rule>			
-		<rule name="ReactRouter Routes business" stopProcessing="true">
-			<match url=".attorney/*" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/attorney/[aid].html" />
-		</rule>	
-		<rule name="ReactRouter Routes business html" stopProcessing="true">
-			<match url=".attorney/*.html" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/attorney/{R:0}.html" />
-		</rule>
-		<rule name="ReactRouter Routes businesses" stopProcessing="true">
-			<match url="./lawyers/attorneys/*" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/attorneys/attorneys.html" />
-		</rule>			
-		<rule name="ReactRouter Routes article" stopProcessing="true">
-			<match url=".article/*" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/article/[articleId].html" />
-		</rule>
-		<rule name="ReactRouter Routes article html" stopProcessing="true">
-			<match url=".article/*.html" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/article/{R:0}.html" />
-		</rule>
-		<rule name="ReactRouter Routes Register" stopProcessing="true">
-          <match url=".plans/*" />
-          <conditions logicalGrouping="MatchAll">
-            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />           
-          </conditions>
-         <action type="Rewrite" url="./lawyers/plans.html" />
-        </rule>	
-		<rule name="ReactRouter Routes success" stopProcessing="true">
-			<match url=".payment/*" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/payment/success.html" />
-		</rule>
-		<rule name="ReactRouter Routes cancel" stopProcessing="true">
-			<match url=".payment/*" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/payment/cancel.html" />
-		</rule>
-		<rule name="ReactRouter Routes contracts" stopProcessing="true">
-			<match url=".contracts/*" />
-			 <conditions logicalGrouping="MatchAll">
-				<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
-			 </conditions>
-			<action type="Rewrite" url="./lawyers/contracts.html" />
-		</rule>
-      </rules>
-    </rewrite>
-	 <!-- 
+	<system.webServer>
+		<rewrite>
+			<rules>
+				<rule name="Static Assets" stopProcessing="true">
+					<match url="([\S]+[.](html|htm|svg|js|css|png|gif|jpg|jpeg))" />
+					<action type="Rewrite" url="/{R:1}" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".lawyers/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".carspares/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".christ/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".finance/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".magrepairs/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".manufacturing/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".panelbeaters/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".tyresandshocks/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes" stopProcessing="true">
+					<match url=".wedding/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+						<add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="/index.html" />
+				</rule>
+				<rule name="ReactRouter Routes product" stopProcessing="true">
+					<match url=".product/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/product/[pid].html" />
+				</rule>
+				<rule name="ReactRouter Routes product html" stopProcessing="true">
+					<match url=".product/*.html" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/product/{R:0}.html" />
+				</rule>
+				<rule name="ReactRouter Routes business" stopProcessing="true">
+					<match url=".attorney/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/attorney/[aid].html" />
+				</rule>
+				<rule name="ReactRouter Routes business html" stopProcessing="true">
+					<match url=".attorney/*.html" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/attorney/{R:0}.html" />
+				</rule>
+				<rule name="ReactRouter Routes businesses" stopProcessing="true">
+					<match url="./lawyers/attorneys/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/attorneys/attorneys.html" />
+				</rule>
+				<rule name="ReactRouter Routes article" stopProcessing="true">
+					<match url=".article/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/article/[articleId].html" />
+				</rule>
+				<rule name="ReactRouter Routes article html" stopProcessing="true">
+					<match url=".article/*.html" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/article/{R:0}.html" />
+				</rule>
+				<rule name="ReactRouter Routes Register" stopProcessing="true">
+					<match url=".plans/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/plans.html" />
+				</rule>
+				<rule name="ReactRouter Routes success" stopProcessing="true">
+					<match url=".payment/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/payment/success.html" />
+				</rule>
+				<rule name="ReactRouter Routes cancel" stopProcessing="true">
+					<match url=".payment/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/payment/cancel.html" />
+				</rule>
+				<rule name="ReactRouter Routes contracts" stopProcessing="true">
+					<match url=".contracts/*" />
+					<conditions logicalGrouping="MatchAll">
+						<add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+					</conditions>
+					<action type="Rewrite" url="./lawyers/contracts.html" />
+				</rule>
+			</rules>
+		</rewrite>
+		<!-- 
 	 <httpErrors>
       <remove statusCode="404" subStatusCode="-1" />
       <remove statusCode="500" subStatusCode="-1" />
@@ -102,8 +166,5 @@
       <error statusCode="500" prefixLanguageFilePath="" path="/500.html" responseMode="ExecuteURL" />
     </httpErrors>
 	-->
-  </system.webServer>
+	</system.webServer>
 </configuration>
-
-I have a react.js and next.js website that has static and dynamic pages. The web.config attached must be modified to accommodate the dynamic and static html pages accordingly. When directly navigating outside the website to .html pages it should load accordingly and then use the internal routing for a better user experience.
-Im using IIS 10 
