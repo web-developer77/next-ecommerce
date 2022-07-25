@@ -50,7 +50,7 @@ const CategoriesListing = ({ setCategoryId }: any) => {
     const fatchMainCategories = async () => {
         const result = await referenceService.getMainCategoryList()
         result.length > 0 && setMainCategories(result);
-        console.log(result)
+        // console.log(result)
     }
 
     const fatchSubCategories = async (category: any) => {

@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
     10,
     response?.data?.guestLogin?.result?.value, // guest token
   )
-  console.log(_jobList)
+  // console.log(_jobList)
   return {
     props: {
       _jobList,

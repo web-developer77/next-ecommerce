@@ -107,6 +107,7 @@ class ReferenceService {
       })
       if (!response || !response.data)
         throw new Error("Cannot get Main Category list")
+        console.log(response.data.getMstCategoryMain)
       return response.data.getMstCategoryMain.result
     } catch (err) {
       throw err

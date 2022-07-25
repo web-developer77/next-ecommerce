@@ -18,7 +18,7 @@ const Home = (props: any) => {
         <title>Panelbeaters EzyFind | Home</title>
         <meta
           name="description"
-          content="Find South Africa Panelbeaters - Snap a picture of your Dent and obtain multiple quotes. Panel Beaters Directory - Click here to view a full list of quality panel beaters in Gauteng, Cape Town, Pretoria, KwaZulu Natal."
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
         />
         <meta
           name="keywords"

@@ -215,7 +215,7 @@ const Home = (props: any) => {
         <title>Lawyers EzyFind</title>
         <meta
           name="description"
-          content="LawyersEzyFind Helps You To Find Contract Lawyers, Tax Attorneys, Free Agreements & Legal Lawyers In South Africa, Download 800 Legal Contracts For Free, Get Instant Legal Advice, And Locate South African Lawyers."
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
         />
         <meta
           name="keywords"

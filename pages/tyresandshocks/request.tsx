@@ -246,7 +246,7 @@ const RequestAssistance = (props: any) => {
       },
       files || null,
     )
-    console.log(result)
+    // console.log(result)
     if (result?.success) {
       addToast('Successfully requested Legal Assistance!', {
         appearance: 'success',
@@ -264,7 +264,7 @@ const RequestAssistance = (props: any) => {
 
   /* Step 5 (Submit) */
   const responseFacebook = async (response: any) => {
-    console.log(response)
+    // console.log(response)
     const { email, name, userID, picture, accessToken } = response
     if (!userID || !accessToken) {
       addToast('FaceBook OAuth Error. Try again', {
@@ -275,7 +275,7 @@ const RequestAssistance = (props: any) => {
     }
     // emailCheck
     const result1 = await authService.emailCheck(email)
-    console.log(result1)
+    // console.log(result1)
     if (result1?.message === 'Email already exists') {
       addToast(result1.message, {
         appearance: 'warning',
@@ -324,7 +324,7 @@ const RequestAssistance = (props: any) => {
       accessToken,
     )
     setLoading(false)
-    console.log(result)
+    // console.log(result)
     if (result?.token) {
       // Regustered
       localStorage.setItem('token', result.token)
@@ -342,7 +342,7 @@ const RequestAssistance = (props: any) => {
     }
   }
   const responseGoogle = async (response: any) => {
-    console.log(response)
+    // console.log(response)
     if (response?.error) {
       addToast('Google OAuth Error. Try again', {
         appearance: 'error',
@@ -358,7 +358,7 @@ const RequestAssistance = (props: any) => {
     } = response
     // emailCheck
     const result1 = await authService.emailCheck(email)
-    console.log(result1)
+    // console.log(result1)
     if (result1?.message === 'Email already exists') {
       addToast(result1.message, {
         appearance: 'warning',
@@ -407,7 +407,7 @@ const RequestAssistance = (props: any) => {
       null,
     )
     setLoading(false)
-    console.log(result)
+    // console.log(result)
     if (result?.token) {
       // Regustered
       localStorage.setItem('token', result.token)
@@ -446,7 +446,7 @@ const RequestAssistance = (props: any) => {
 
     // emailCheck
     const result1 = await authService.emailCheck(searchParam.email)
-    console.log(result1)
+    // console.log(result1)
     if (result1?.message === 'Email already exists') {
       addToast(result1.message, {
         appearance: 'warning',
@@ -479,7 +479,7 @@ const RequestAssistance = (props: any) => {
 
     // mobileCheck
     const result2 = await authService.mobileCheck(searchParam.mobileNumber)
-    console.log(result2)
+    // console.log(result2)
     if (result2?.result !== 'true') {
       addToast(result2?.message || 'Phone Number already exists', {
         appearance: 'error',
@@ -491,7 +491,7 @@ const RequestAssistance = (props: any) => {
     setMobileValid('')
 
     // submitting...
-    console.log(searchParam)
+    // console.log(searchParam)
     setLoading(true)
     const result = await doRegister(
       searchParam.email,
@@ -514,7 +514,7 @@ const RequestAssistance = (props: any) => {
       null,
     )
     setLoading(false)
-    console.log(result)
+    // console.log(result)
     if (result?.token) {
       // Regustered
       localStorage.setItem('token', result.token)

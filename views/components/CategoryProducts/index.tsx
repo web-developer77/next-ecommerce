@@ -175,6 +175,8 @@ const ProductSection = (props: IProductsProps) => {
                   categoryId == 1396 ? categorieImages4[Math.floor(Math.random() * (5))] : 
                   categoryId == 1384 ? categorieImages5[Math.floor(Math.random() * (5))] : 
                   categoryId == 1342 ? categorieImages6[Math.floor(Math.random() * (5))] : 
+                  categoryId == 1336 ? categorieImages7[Math.floor(Math.random() * (5))] : 
+                  categoryId == 1768 ? categorieImages3[Math.floor(Math.random() * (5))] : 
                   categorieImages7[num][Math.floor(Math.random() * (4))]              
                 }
                 className="img-responsive"

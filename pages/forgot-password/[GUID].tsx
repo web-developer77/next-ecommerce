@@ -18,7 +18,7 @@ const ForgotPasswordGuid = (props: any) => {
         <title>EzyFind | Forgot Password</title>
         <meta
           name="description"
-          content="Download Free 800+ Legal Contracts, Get Real-time advice & Find South Africa attorneys"
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
         />
         <meta
           name="keywords"

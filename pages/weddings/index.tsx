@@ -18,7 +18,7 @@ const Home = (props: any) => {
         <title>Wedding EzyFind | Home</title>
         <meta
           name="description"
-          content="Vondeling wines wedding venue - Looking for affordable Vondeling , Sixpence and Memoire Wedding venue in South Africa? Call us right now and get the best all the Wedding Venues, Wedding Planners, Photographers, Honeymoon Destinations and Wedding Service."
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
         />
         <meta
           name="keywords"

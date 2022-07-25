@@ -18,7 +18,7 @@ const Home = (props: any) => {
         <title>Tyres EzyFind | Home</title>
         <meta
           name="description"
-          content="Cheap Tyres in South Africa - Snap tyre size and obtain multiple quotes on tyre specials from all tyres providers Request via the website or mobile application online."
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
         />
         <meta
           name="keywords"

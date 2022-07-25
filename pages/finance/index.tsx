@@ -18,7 +18,7 @@ const Home = (props: any) => {
         <title>Finance EzyFind | Home</title>
         <meta
           name="description"
-          content="Are you looking for the best business credit cards loan in South Africa? FinanceEzyFind.co.za Submit your request and obtain multiple quotes/rates from all banks & financial providers in South Africa!!"
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
         />
         <meta
           name="keywords"

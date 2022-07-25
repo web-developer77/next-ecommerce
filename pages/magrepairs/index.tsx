@@ -18,7 +18,7 @@ const Home = (props: any) => {
         <title>Mags EzyFind | Home</title>
         <meta
           name="description"
-          content="Snap a pic of your mags and get quotes on repairs. South Africa Mag Repairs, Rim Repairs, New Mags, New Rims, BBS Rims, Eagle Rims in Johannesburg, Cape Town, Durban, Sandton, Pretoria, East London, Port Elizabeth"
+          content="South African manufacturers directory - Find Manufacturing and ICT and Electronics in South Africa with all contact information & details for each manufacturing company."
         />
         <meta
           name="keywords"
