@@ -222,7 +222,6 @@ class ProductService {
     prdShoppingCart: PrdShoppingCartInputType,
   ): Promise<PostPrdShoppingCart_postPrdShoppingCart> {
     try {
-      console.log(prdShoppingCart)
       const response = await apolloClient().mutate({
         mutation: UPDATE_PRD_SHOPPING_CART,
         variables: { prdShoppingCart },

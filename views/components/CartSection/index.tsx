@@ -116,7 +116,6 @@ const CartSection = (props: any) => {
     }
   }
   const increaseValue = async (item: any) => {
-    console.log("increaseValue", item);
     setLoading(true)
     let token = localStorage.getItem('token')
     const result = await productsService
@@ -124,7 +123,7 @@ const CartSection = (props: any) => {
         recordId: item.recordID,
         quantity: item.quantity + 1,
         userId: null,
-        // sessionId: null,
+        sessionId: token,
         productId: item.productID,
         dateCreated: new Date(),
         fromDate: new Date(item.fromDate),
@@ -150,7 +149,7 @@ const CartSection = (props: any) => {
         recordId: item.recordID,
         quantity: item.quantity,
         userId: null,
-        // sessionId: null,
+        sessionId: token,
         productId: item.productID,
         dateCreated: new Date(),
         fromDate: data,
@@ -176,7 +175,7 @@ const CartSection = (props: any) => {
         recordId: item.recordID,
         quantity: item.quantity,
         userId: null,
-        // sessionId: null,
+        sessionId: token,
         productId: item.productID,
         dateCreated: new Date(),
         fromDate: new Date(item.endDate),

@@ -180,7 +180,7 @@ const LegalContractSection = () => {
   ])
   const [priceRange, setPriceRange] = useState<Array<string>>([])
   const [categoryId, setCategoryId] = useState<number | null>(_categoryId)
-  const [categoryAsyncId, setCategoryAsyncId] = useState<any>({value: 1447, label: "All Category"})
+  const [categoryAsyncId, setCategoryAsyncId] = useState<any>({value: 0, label: "All Category"})
   const [categoryId12, setCategoryId1] = useState<number | null>(_categoryId)
 
   const [scopeId, setScopeId] = useState<number | null>(_scopeId)
@@ -284,7 +284,7 @@ const LegalContractSection = () => {
 
   const loadSubCategory = async (search: any, loadedOptions: any, { page }: any) => {
     const res: any = await referenceService.getCategoryListByParentIdAsync(categoryIds, page, 10)
-    console.log("resutls", res)
+    console.log("resutls", categoryIds)
     let options: any = [];
     let hasMore = true;
 

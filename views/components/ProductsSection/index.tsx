@@ -113,7 +113,7 @@ const ProductSection = (props: IProductsProps) => {
       })
     }
     setPreLoading(!preloading);
-    console.log(preloading)
+    console.log("fetchMainCategories", result)
   }
   useEffect(() => {
     setProductList([])

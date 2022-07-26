@@ -82,7 +82,7 @@ const AttorneyLists = (props: any) => {
     suburb,
     subCategoryId,
   })
-  const [searchParamAsync, setsearchParamAsync] = useState<any>({ subCategoryId: {value: 0, label: "All Category"}});
+  const [searchParamAsync, setsearchParamAsync] = useState<any>({ subCategoryId: {value: 1, label: "All Category"}});
   const [activeCompayId, setActiveCompanyId] = useState<any>(null)
   const [questionModalShow, setQuestionModalShow] = useState<boolean>(false)
   const { setBusinessList } = actionDispatch(useAppDispatch())
