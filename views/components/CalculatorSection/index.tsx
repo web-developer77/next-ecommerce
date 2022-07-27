@@ -319,15 +319,23 @@ const CalculatorSection = () => {
 
 
     const arrayToArray = tabData.map((data) => data.tables);
-    console.log("test", arrayToArray);
-    /* convert from array of arrays to workbook */
-    var worksheet = XLSX.utils.aoa_to_sheet(arrayToArray);
-    console.log("test1", worksheet);
+    const headerTitle = 'Child Support / Maintenance Calculator';
+    const sheet = XLSX.utils.json_to_sheet([{}], {
+      header: [headerTitle],
+    });
+    XLSX.utils.sheet_add_json(sheet, arrayToArray, { origin: 'A3' });
     var new_workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(new_workbook, sheet);
+    // console.log("test", arrayToArray);
+    /* convert from array of arrays to workbook */
+    // var worksheet = XLSX.utils.aoa_to_sheet(arrayToArray);
+    // console.log("test1", worksheet);
+    
  
-    XLSX.utils.book_append_sheet(new_workbook, worksheet, "SheetJS");
-    var wbout = XLSX.write(new_workbook, {bookType:'xlsx', type:'binary'});
-    console.log("test1", wbout);
+    // XLSX.utils.book_append_sheet(new_workbook, worksheet, "SheetJS");
+    // var wbout = XLSX.write(new_workbook, {bookType:'xlsx', type:'binary'});
+    // console.log("test1", wbout);
+    XLSX.writeFile(new_workbook, 'child maintenance calculator.xls');
     // saveAs(new Blob([s2ab(wbout)],{type:"text/plain;charset=utf-8"}), "sheetjs.xlsx");
   };
 

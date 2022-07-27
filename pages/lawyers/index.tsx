@@ -235,7 +235,7 @@ const Home = (props: any) => {
         legalServiceList?.products.length ? (
           <section className="product-category clearfix">
             <Container fluid className="product-container">
-              <CategoryProducts item={legalServiceList} num="" />
+              <CategoryProducts item={legalServiceList} num={0} />
             </Container>
           </section>
         ) : (

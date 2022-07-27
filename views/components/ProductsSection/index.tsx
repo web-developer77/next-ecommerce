@@ -28,6 +28,7 @@ const ProductSection = (props: IProductsProps) => {
         ;(data = result[i].categoryId),
           fetchProductList(1, null, 1, null, null, null, 1, null)
       }
+      setPreLoading(!preloading)
     }
   }
   const fetchSubCategoryList = async (categoryId: number) => {
@@ -37,6 +38,7 @@ const ProductSection = (props: IProductsProps) => {
         ;(data = result[i].categoryId),
           fetchProductList(1, null, 1, null, null, null, 1, null)
       }
+      setPreLoading(!preloading)
     }
   }
   const fetchProductList = async (
@@ -113,10 +115,11 @@ const ProductSection = (props: IProductsProps) => {
       })
     }
     setPreLoading(!preloading);
-    console.log("fetchMainCategories", result)
+    console.log("fetchMainCategories", preloading)
   }
   useEffect(() => {
     setProductList([])
+    console.log(categoryId)
     /* init search */
     // if (!cityList || !cityList.length) fetchCityList()
     // if (!suburbList || !suburbList.length) fetchSuburbList()
@@ -156,7 +159,7 @@ const ProductSection = (props: IProductsProps) => {
             },
             index: React.Key | null | undefined,
           ) => (
-            <CategoryProducts item={item} num={index} />
+            <CategoryProducts item={item} num={Number(index)} />
           ),
         )) : 
         (

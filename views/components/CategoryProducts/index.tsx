@@ -168,7 +168,7 @@ const ProductSection = (props: IProductsProps) => {
           <Slider {...settings1}>
             <div className="product-main-category-box">
               <img
-                src={categoryId == 1447 ? categorieImages[Math.floor(Math.random() * (5))] : 
+                src={String(categoryId == 1447 ? categorieImages[Math.floor(Math.random() * (5))] : 
                   categoryId == 1402 ? categorieImages1[Math.floor(Math.random() * (5))] : 
                   categoryId == 549 ? categorieImages2[Math.floor(Math.random() * (5))] : 
                   categoryId == 1672 ? categorieImages3[Math.floor(Math.random() * (5))] : 
@@ -177,7 +177,7 @@ const ProductSection = (props: IProductsProps) => {
                   categoryId == 1342 ? categorieImages6[Math.floor(Math.random() * (5))] : 
                   categoryId == 1336 ? categorieImages7[Math.floor(Math.random() * (5))] : 
                   categoryId == 1768 ? categorieImages3[Math.floor(Math.random() * (5))] : 
-                  categorieImages7[num][Math.floor(Math.random() * (4))]              
+                  categorieImages7[Number(num)][Math.floor(Math.random() * (4))])
                 }
                 className="img-responsive"
                 alt="product-main-category-box1"
