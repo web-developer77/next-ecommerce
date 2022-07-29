@@ -8,7 +8,7 @@ import { apolloClient } from "@graphql/index";
 import { Guest_Login } from "@services/authService/queries";
 import businessService from "@services/businessService";
 
-const categoryId = process.env.NEXT_PUBLIC_DEFAULT_CATEGORY_ID;
+const categoryId = Number(process.env.NEXT_PUBLIC_DEFAULT_CATEGORY_ID);
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await apolloClient().query({
@@ -16,7 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
   });
 
   var _businessList;
-  if (categoryId == "null") {
+  if (String(categoryId) == "NaN") {
     _businessList = await businessService.getBusinessList(
       null,
       null,

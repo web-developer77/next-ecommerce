@@ -119,14 +119,14 @@ const ProductSection = (props: IProductsProps) => {
   }
   useEffect(() => {
     setProductList([])
-    console.log(categoryId)
+    console.log("CategoryId", categoryId)
     /* init search */
     // if (!cityList || !cityList.length) fetchCityList()
     // if (!suburbList || !suburbList.length) fetchSuburbList()
 
     /* init category */
     // if (!mainCategoryList || !mainCategoryList.length)
-    if (categoryId === 0) {
+    if (categoryId === NaN) {
       fatchMainCategories()
     } else {
       if (categoryId == 1447) {
