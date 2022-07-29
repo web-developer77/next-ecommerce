@@ -1,44 +1,60 @@
-import React, { useState } from 'react'
-import Head from 'next/head'
-import { HeroImage, AttorneyLists, DownloadSection } from '@views/components'
+import React, { useState } from "react";
+import Head from "next/head";
+import { HeroImage, AttorneyLists, DownloadSection } from "@views/components";
 
 /* StaticProps */
-import { InferGetStaticPropsType, GetStaticProps } from 'next'
-import { apolloClient } from '@graphql/index'
-import { Guest_Login } from '@services/authService/queries'
-import businessService from '@services/businessService'
+import { InferGetStaticPropsType, GetStaticProps } from "next";
+import { apolloClient } from "@graphql/index";
+import { Guest_Login } from "@services/authService/queries";
+import businessService from "@services/businessService";
 
-const categoryId = Number(process.env.NEXT_PUBLIC_DEFAULT_CATEGORY_ID)
+const categoryId = process.env.NEXT_PUBLIC_DEFAULT_CATEGORY_ID;
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await apolloClient().query({
     query: Guest_Login,
-  })
-  const _businessList = await businessService.getBusinessList(
-    null,
-    null,
-    null,
-    null,
-    `${categoryId}`,
-    null,
-    null,
-    null,
-    null,
-    null,
-    response?.data?.guestLogin?.result?.value, // guest token
-  )
+  });
+
+  var _businessList;
+  if (categoryId == "null") {
+    _businessList = await businessService.getBusinessList(
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      response?.data?.guestLogin?.result?.value // guest token
+    );
+  } else {
+    _businessList = await businessService.getBusinessList(
+      null,
+      null,
+      null,
+      null,
+      `${categoryId}`,
+      null,
+      null,
+      null,
+      null,
+      null,
+      response?.data?.guestLogin?.result?.value // guest token
+    );
+  }
+
   return {
     props: {
       _businessList,
     },
-  }
-}
+  };
+};
 
 const Attorneys = (props: any) => {
-  
   return (
-
-    
     <div className="fluid-container">
       <Head>
         <meta
@@ -78,7 +94,7 @@ const Attorneys = (props: any) => {
       <AttorneyLists {...props} />
       <DownloadSection />
     </div>
-  )
-}
+  );
+};
 
-export default Attorneys
+export default Attorneys;
